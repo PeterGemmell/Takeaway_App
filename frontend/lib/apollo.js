@@ -10,5 +10,4 @@ const config = {
     uri: `${API_URL}/graphql`, // Server URL (must be absolute)
   })
 };
-
 export default withData(config);
