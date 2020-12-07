@@ -51,7 +51,7 @@ class MyApp extends App {
         isAuthenticated: !!this.state.user,
         setUser: this.setUser,
       }}
-      > // removed arrow here.
+      >
         <Head>
           <link
             rel="stylesheet"
