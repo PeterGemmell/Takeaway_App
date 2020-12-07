@@ -47,6 +47,21 @@ export const login = (identifier, password) => {
       // resolve the promise to set loading to false in SignUp form
       resolve(res);
       // redirect back to home pagefor restaurant selection
+      Router.push("/");
     })
-  })
-}
+    .catch((error) => {
+      // reject the promise and pass the error object back to the form
+      reject(error);
+    });
+  });
+};
+
+export const logout = () => {
+  // remove token and user cookie
+  Cookie.remove("token");
+  delete window.__user;
+  // sync logout between multiple windows
+  window.localStorage.setItem("logout", Date.now());
+  // redirect to the home page
+  Router.push("/");
+};
