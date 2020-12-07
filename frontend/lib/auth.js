@@ -65,3 +65,5 @@ export const logout = () => {
   // redirect to the home page
   Router.push("/");
 };
+
+// NOTE have not added in Higher Order Component for multiple tab login/logouts.
