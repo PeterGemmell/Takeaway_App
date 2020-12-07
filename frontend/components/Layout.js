@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { Container, Nav, NavItem } from "reactstrap";
 import { logout } from "../lib/auth";
-import AppContext from "../context/AppContext"; // ROUTE MIGHT BE WRONG HERE.
+import AppContext from "../components/Context/AppContext"; // ROUTE MIGHT BE WRONG HERE.
 
 
 

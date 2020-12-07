@@ -4,12 +4,12 @@ import Head from "next/head";
 import Cookie from "js-cookie";
 import fetch from "isomorphic-fetch";
 import Layout from "../components/Layout";
-import AppContext from "../Context/AppContext"; // NOTE THIS ROUTE PATH MAY BE WRONG.
+import AppContext from "../components/Context/AppContext"; // NOTE THIS ROUTE PATH MAY BE WRONG.
 import withData from "../lib/apollo";
 
 class MyApp extends App {
   state = {
-    user: null;
+    user: null,
   };
 
   componentDidMount(){
