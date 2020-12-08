@@ -142,13 +142,3 @@ function Login(props) {
 }
 
 export default Login;
-
-
-
-
-
-
-
-export default () => {
-  return <h1> Sign In</h1>;
-};
