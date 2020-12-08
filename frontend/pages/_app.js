@@ -10,11 +10,10 @@ import withData from "../lib/apollo";
 class MyApp extends App {
   state = {
     user: null,
-    cart: { items: [], total: 0},
+    cart: { items: [], total: 0 },
   };
 
-  componentDidMount(){
-    // grad token value from cookie
+  componentDidMount() {
     const token = Cookie.get("token");
     // restore cart from cookie, this could also be tracked in a db
     const cart = Cookie.get("cart");
@@ -29,10 +28,9 @@ class MyApp extends App {
         });
       });
     }
-
     if (token) {
       // authenticate the token on the server and place set user object
-      fetch(`${process.env.NEXT_PUBLIC_API_URL}users/me`, {
+      fetch("http://localhost:1337/users/me", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -56,8 +54,8 @@ class MyApp extends App {
 
   addItem = (item) => {
     let { items } = this.state.cart;
-    // check for item already in cart
-    // if not in cart, add item if item is found increase quantity ++
+    //check for item already in cart
+    //if not in cart, add item if item is found increase quanity ++
     const newItem = items.find((i) => i.id === item.id);
     // if item is not new, add to cart, set quantity to 1
     if (!newItem) {
@@ -78,61 +76,60 @@ class MyApp extends App {
         {
           cart: {
             items: this.state.cart.items.map((item) =>
-           item.id === newItem.id
-           ? Object.assign({}, item, { quantity: item.quantity + 1})
-           : item
-           ),
-           total: this.state.cart.total + item.price,
-         },
-       },
-       () => Cookie.set("cart", this.state.cart.items)
-     );
+              item.id === newItem.id
+                ? Object.assign({}, item, { quantity: item.quantity + 1 })
+                : item
+            ),
+            total: this.state.cart.total + item.price,
+          },
+        },
+        () => Cookie.set("cart", this.state.cart.items)
+      );
     }
   };
   removeItem = (item) => {
     let { items } = this.state.cart;
     //check for item already in cart
-    //if not in cart, add item if item is found increase quantity ++
+    //if not in cart, add item if item is found increase quanity ++
     const newItem = items.find((i) => i.id === item.id);
     if (newItem.quantity > 1) {
       this.setState(
         {
           cart: {
             items: this.state.cart.items.map((item) =>
-             item.id === newItem.id
-             ? Object.assign({}, item, { quantity: item.quantity - 1})
-             : item
-           ),
-           total: this.state.cart.total - item.price,
-         },
-       },
-       () => Cookie.set("cart", this.state.items)
-     );
-   } else {
-     const items = [...this.state.cart.items];
-     const index = items.findIndex((i) => i.id === newItem.id);
+              item.id === newItem.id
+                ? Object.assign({}, item, { quantity: item.quantity - 1 })
+                : item
+            ),
+            total: this.state.cart.total - item.price,
+          },
+        },
+        () => Cookie.set("cart", this.state.items)
+      );
+    } else {
+      const items = [...this.state.cart.items];
+      const index = items.findIndex((i) => i.id === newItem.id);
 
-     items.splice(index, 1);
-     this.setState(
-       { cart: { items: items, total: this.state.cart.total - item.price } },
-       () => Cookie.set("cart", this.state.items)
-     );
-   }
- };
-
+      items.splice(index, 1);
+      this.setState(
+        { cart: { items: items, total: this.state.cart.total - item.price } },
+        () => Cookie.set("cart", this.state.items)
+      );
+    }
+  };
   render() {
     const { Component, pageProps } = this.props;
 
     return (
       <AppContext.Provider
-      value={{
-        user: this.state.user,
-        isAuthenticated: !!this.state.user,
-        setUser: this.setUser,
-        cart: this.state.cart,
-        addItem: this.addItem,
-        removeItem: this.removeItem,
-      }}
+        value={{
+          user: this.state.user,
+          isAuthenticated: !!this.state.user,
+          setUser: this.setUser,
+          cart: this.state.cart,
+          addItem: this.addItem,
+          removeItem: this.removeItem,
+        }}
       >
         <Head>
           <link
@@ -150,4 +147,5 @@ class MyApp extends App {
     );
   }
 }
+
 export default withData(MyApp);
