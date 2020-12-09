@@ -37,7 +37,7 @@ function Login(props) {
     <Col sm="12" md={{ size: 5, offset: 3 }}>
     <div className="paper">
     <div className="header">
-    <img src="https://strapi.io/assets/images/logo.png" />
+    <img src="https://www.devsbedevin.net/content/images/2019/09/download--5-.png" />
     </div>
     <section className="wrapper">
     {Object.entries(error).length !== 0 &&
@@ -133,7 +133,7 @@ function Login(props) {
         color: blue !important;
       }
       img {
-        margin: 15px 30px 10px 50px;
+        margin: 10px 30px 10px 40px;
       }
     `}
     </style>
