@@ -14,7 +14,7 @@ function Checkout() {
   // isAuthenticated is passed to the cart component to display order button
   const { isAuthenticated } = appContext;
   // load stripe to inject into elements components
-  const stripePromise = loadStripe("");
+  const stripePromise = loadStripe("pk_test_51Hw954FrzuwKlQALtwZzObaU6nLRo4PfX5yptGSrmQxUFyEk1HIqZXCBakel8K76aav4gw26VnVNJ9DZXY3Gps7I00oErhyxPz");
 
 
   return (

@@ -6,7 +6,7 @@ import Cookies from "js-cookie";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
 import CardSection from "./CardSection";
-import AppContext from "../components/Context/AppContext";
+import AppContext from "../../components/Context/AppContext";
 
 function CheckoutForm() {
   const [data, setData] = useState({

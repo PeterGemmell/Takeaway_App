@@ -42,7 +42,7 @@ const Layout = (props) => {
 
     <NavItem className="ml-auto">
     {user ? (
-      <h5>{user.username}</h5>
+      <h5 style={{ color: "white" }}>{user.username}</h5>
     ) : (
       <Link href="/register">
       <a className="nav-link"> Sign Up</a>
