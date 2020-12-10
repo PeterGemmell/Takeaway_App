@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "strapi-provider-upload-aws-s3": "3.0.0-beta.20.3"
+  }
+}
