@@ -16,5 +16,6 @@ The app has Stripe fully integrated so in this section, the customer can theoret
 ![Imgur](https://i.imgur.com/gSlJshi.png)
 ![Imgur](https://i.imgur.com/hvv4zW6.png)
 ![Imgur](https://i.imgur.com/LLjjE2Z.png)
+![Imgur](https://i.imgur.com/4VJyMCZ.png)
 
 
