@@ -4,7 +4,7 @@
 Users arrive on the homepage displaying the list of available restaurants and dishes if they click on each restaurant. 
 
 #### To Order
-Users must either Login in create an account to place an order. This is fully managed by Strapi CMS, along with the listed restaurants and dishes. Once logged in a user can select whatever dishes they want to order and it will be displayed in their cart.
+Users must either Login or create an account to place an order. This is fully managed by Strapi CMS, along with the listed restaurants and dishes. Once logged in a user can select whatever dishes they want to order and it will be displayed in their cart.
 
 #### Cart
 Once the user has finished choosing their dishes, they click on the order button and this takes them to the checkout section.
